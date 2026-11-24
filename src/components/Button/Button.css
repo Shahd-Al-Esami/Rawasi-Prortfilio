@@ -1,0 +1,119 @@
+.btn-101,
+.btn-101 *,
+.btn-101 :after,
+.btn-101 :before,
+.btn-101:after,
+.btn-101:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-101 {
+  --thickness: 4px;
+  --roundness: 0px;
+  --color: #E6C78B;
+  --opacity: 0.9;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(26, 17, 11, 0.28);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(197, 160, 89, 0.55);
+  border-radius: 0;
+  color: #F7F3EA;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0.95rem 4rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.btn-101:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.btn-101:hover {
+  background-color: #C5A059;
+  border-color: #E6C78B;
+  color: #1A110B;
+}
+
+.btn-101:active {
+  --opacity: 0.35;
+  background-color: #A88750;
+}
+
+.btn-101 .btn-101-label {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+}
+
+.btn-101 svg.btn-101-border {
+  border-radius: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.btn-101 rect {
+  fill: none;
+  stroke: var(--color);
+  stroke-width: var(--thickness);
+  rx: 0;
+  ry: 0;
+  stroke-linejoin: miter;
+  stroke-dasharray: 185%;
+  stroke-dashoffset: 80;
+  animation: snake 2s linear infinite;
+  animation-play-state: paused;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  width: 100%;
+}
+
+.btn-101:hover rect {
+  animation-play-state: running;
+  opacity: var(--opacity);
+  stroke: #1A110B;
+}
+
+@keyframes snake {
+  to {
+    stroke-dashoffset: 370%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-101 rect {
+    animation: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .btn-101:hover rect {
+    opacity: 0.6;
+  }
+}
