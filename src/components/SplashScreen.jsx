@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Logo from './Logo';
-import SKY_BG from '../assets/d.jpg';
+import SKY_BG from '../assets/splash.jpg';
 
 export default function SplashScreen({ onFinish }) {
   const [isOpening, setIsOpening] = useState(false);

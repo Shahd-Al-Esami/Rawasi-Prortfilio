@@ -1,5 +1,5 @@
 import React from 'react';
-import heroVideo from '../assets/new.mp4';
+import heroVideo from '../assets/hero.mp4';
 import Button from '../components/Button/Button';
 
 const HERO_CONTENT = {
