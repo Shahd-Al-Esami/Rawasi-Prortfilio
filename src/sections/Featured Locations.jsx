@@ -6,7 +6,7 @@ import {
   ArrowUpRight,
   ArrowUpLeft,
 } from 'lucide-react';
-
+import Heading from '../components/Heading';
 const LOCATIONS_HUBS = {
   en: {
     eyebrow: 'Cities & Access',
@@ -148,12 +148,7 @@ export default function Locations({ lang = 'en', onSelectLocation }) {
       contactEl.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  const HeadingFontStyle = {
-    fontFamily:
-      currentLang === 'ar'
-        ? "'Amiri', serif"
-        : "'Cinzel', serif",
-  };
+ 
   return (
     <section
       id="locations"
@@ -167,24 +162,9 @@ export default function Locations({ lang = 'en', onSelectLocation }) {
       <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         {/* عنوان القسم في المنتصف */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-10">
-          <div className="inline-flex items-center justify-center gap-2.5">
-            <span className="h-[1.5px] w-7 bg-[#C5A059]" />
-            <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#8A6728]">
-              {t.eyebrow}
-            </span>
-            <span className="h-[1.5px] w-7 bg-[#C5A059]" />
-          </div>
-
-          <h2
-            style={HeadingFontStyle}
-            className="text-3xl sm:text-5xl font-bold text-[#1A110B] tracking-tight"
-          >
-            {t.title}
-          </h2>
-
-          <p className="text-sm sm:text-base text-[#2C1E14]/85 leading-relaxed">
-            {t.subtitle}
-          </p>
+         <Heading eyebrow={t.eyebrow}  headingLine1={t.title}  description={t.subtitle} lang={lang} />
+         
+        
         </div>
 
         {/* مخطط خريطة فاتح بطابع معماري يوضح الربط بين المدن والوصول */}

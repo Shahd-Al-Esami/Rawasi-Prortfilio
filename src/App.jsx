@@ -14,7 +14,7 @@ import Locations from './sections/Featured Locations.jsx';
 
 export default function App() {
   const [splashFinished, setSplashFinished] = useState(false);
-  const [listingType, setListingType] = useState('Buy');
+  const [listingType, setListingType] = useState('buy');
   const [lang, setLang] = useState('en');
 
   // منع التمرير أثناء عرض شاشة البداية

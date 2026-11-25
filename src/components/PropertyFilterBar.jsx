@@ -108,7 +108,7 @@ export default function PropertyFilterBar({
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-[#C5A059]/25">
         <div className="flex flex-wrap items-center gap-3">
           <div className="inline-flex rounded-none border border-[#1A110B]/20 bg-[#F7F3EA] p-1">
-            <button
+            <button 
               type="button"
               onClick={() => onListingTabChange('buy')}
               className={`rounded-none px-4 py-2 text-xs sm:text-sm font-bold transition-colors cursor-pointer ${

@@ -3,7 +3,7 @@ import { PROPERTIES_DATA } from '../data/propertiesData1.js';
 import SliderCards from '../components/SliderCards.jsx';
 import PropertyFilterBar from '../components/PropertyFilterBar.jsx';
 import PropertyGrid from '../components/PropertyGrid.jsx';
-
+import Heading from '../components/Heading.jsx';
 const COPY = {
   en: {
     eyebrow: 'Curated Portfolio',
@@ -136,8 +136,8 @@ const COPY = {
 const ITEMS_PER_PAGE = 6;
 
 export default function Properties({
-  lang = 'en',
-  listingType,
+  lang,
+  listingType='Buy',
   onChangeListingType,
 }) {
   const currentLang = lang === 'ar' ? 'ar' : 'en';
@@ -156,7 +156,7 @@ export default function Properties({
     };
   }, []);
 
-  const [internalListingType, setInternalListingType] = useState('buy');
+  const [internalListingType, setInternalListingType] = useState('Buy');
   const activeType = listingType ?? internalListingType;
 
   const [keyword, setKeyword] = useState('');
@@ -286,12 +286,7 @@ export default function Properties({
         : "'Plus Jakarta Sans', sans-serif",
   };
 
-    const HeadingFontStyle = {
-    fontFamily:
-      currentLang === 'ar'
-        ? "'Amiri', serif"
-        : "'Cinzel', serif",
-  };
+  
   return (
     <section
       id="featuredProperties"
@@ -300,24 +295,12 @@ export default function Properties({
     >
       <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center justify-center gap-2.5">
-            <span className="h-[1.5px] w-7 bg-[#C5A059]" />
-            <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#8A6728]">
-              {t.eyebrow}
-            </span>
-            <span className="h-[1.5px] w-7 bg-[#C5A059]" />
-          </div>
+         <Heading eyebrow={t.eyebrow}  headingLine1={t.title}  description={t.subtitle} lang={lang} />
+         
 
-          <h2
-            style={HeadingFontStyle}
-            className="text-3xl sm:text-5xl font-bold text-[#1A110B] tracking-tight"
-          >
-            {t.title}
-          </h2>
+          
 
-          <p className="text-sm sm:text-base xl:text-[17px] text-[#2C1E14]/85 leading-relaxed">
-            {t.subtitle}
-          </p>
+         
         </div>
 
         <SliderCards

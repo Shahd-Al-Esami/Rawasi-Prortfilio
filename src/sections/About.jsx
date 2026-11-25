@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Sparkles } from 'lucide-react';
 import Button from '../components/Button/Button.jsx';
 import AboutStatsCards from '../components/AboutStatsCards.jsx';
+import Heading from '../components/Heading.jsx';
 
 
 const CONTENT = {
@@ -94,7 +95,7 @@ const CONTENT = {
 };
 
 export default function About({
-  lang = 'en',
+  lang ,
   imageUrl,
   onSelectListingType,
 }) {
@@ -177,7 +178,7 @@ export default function About({
       <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
           <div className="lg:col-span-7 space-y-5">
-            <div className="inline-flex items-center gap-2.5">
+            {/* <div className="inline-flex items-center gap-2.5">
               <span className="h-[1.5px] w-7 bg-[#C5A059]" />
               <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#8A6728]">
                 {t.eyebrow}
@@ -194,8 +195,8 @@ export default function About({
 
             <p className="text-sm sm:text-base xl:text-[17px] leading-relaxed text-[#2C1E14]/90 max-w-2xl">
               {t.description}
-            </p>
-
+            </p> */}
+<Heading eyebrow={t.eyebrow}  headingLine1={t.headingLine1} headingHighlight={t.headingHighlight} description={t.description} lang={lang} />
             <p className="text-xs sm:text-sm xl:text-[15px] leading-relaxed text-[#2C1E14]/80 border-s-2 border-[#C5A059] ps-4 max-w-2xl">
               {t.achievementsNote}
             </p>

@@ -7,12 +7,13 @@ import {
   RotateCcw,
 } from 'lucide-react';
 
+
 import { LEDGER_COPY } from '../data/investmentOpportunitiesData.js';
 import InteractiveGulfMap from '../components/InteractiveGulfMap.jsx';
 import ArchitecturalMassing3D from '../components/3D.jsx';
-
+import Heading from '../components/Heading.jsx';
 export default function InvestmentOpportunities({
-  lang = 'en',
+  lang ,
   onSelectOpportunity,
 }) {
   const currentLang = lang === 'ar' ? 'ar' : 'en';
@@ -22,7 +23,7 @@ export default function InvestmentOpportunities({
 
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedMarket, setSelectedMarket] = useState('all');
-  const [expandedId, setExpandedId] = useState(t.items[0].id);
+  const [expandedId, setExpandedId] = useState();
 
   const filteredItems = useMemo(() => {
     return t.items.filter((item) => {
@@ -70,9 +71,6 @@ export default function InvestmentOpportunities({
       : "'Plus Jakarta Sans', sans-serif",
   };
 
-  const headingFontStyle = {
-    fontFamily: currentLang === 'ar' ? "'Amiri', serif" : "'Cinzel', serif",
-  };
 
   return (
     <section
@@ -83,24 +81,9 @@ export default function InvestmentOpportunities({
     >
       <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-10 sm:mb-12">
-          <div className="inline-flex items-center justify-center gap-2.5">
-            <span className="h-[1.5px] w-7 bg-[#C5A059]" />
-            <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#8A6728]">
-              {t.eyebrow}
-            </span>
-            <span className="h-[1.5px] w-7 bg-[#C5A059]" />
-          </div>
-
-          <h2
-            style={headingFontStyle}
-            className="text-3xl sm:text-5xl font-bold text-[#1A110B] tracking-tight"
-          >
-            {t.title}
-          </h2>
-
-          <p className="text-sm sm:text-base text-[#2C1E14]/85 leading-relaxed">
-            {t.subtitle}
-          </p>
+        
+         
+<Heading eyebrow={t.eyebrow}  headingLine1={t.title}  description={t.subtitle} lang={lang} />
 
           <div className="pt-2">
             <ArchitecturalMassing3D lang={currentLang} />

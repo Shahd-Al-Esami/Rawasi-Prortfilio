@@ -7,7 +7,7 @@ import {
   ArrowUpRight,
   ArrowUpLeft,
 } from 'lucide-react';
-
+import Heading from '../components/Heading';
 const SERVICES_DATA = {
   en: {
     eyebrow: 'What We Deliver',
@@ -187,26 +187,9 @@ export default function Services({ lang = 'en', onSelectService }) {
     >
       <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="max-w-2xl mx-auto text-center space-y-4 mb-12 sm:mb-14">
-          <div className="inline-flex items-center justify-center gap-2.5">
-            <span className="h-[1.5px] w-7 bg-[#C5A059]" />
-            <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#8A6728]">
-              {t.eyebrow}
-            </span>
-            <span className="h-[1.5px] w-7 bg-[#C5A059]" />
-          </div>
+<Heading eyebrow={t.eyebrow}  headingLine1={t.title} description={t.subtitle} lang={lang} />
 
-          <h2
-            style={HeadingFontStyle}
-            className="text-3xl sm:text-5xl font-bold text-[#1A110B] tracking-tight"
-          >
-            {t.title}
-          </h2>
-
-          <p className="text-sm sm:text-base xl:text-[17px] text-[#2C1E14]/85 leading-relaxed">
-            {t.subtitle}
-          </p>
-        </div>
-
+</div>
         <div
           ref={sectionGridRef}
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch"

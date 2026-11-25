@@ -1,74 +1,57 @@
 # Rawasi Real Estate
 
-Rawasi is a luxury real estate website for exploring residential properties, rental listings, investment opportunities, Gulf market locations, and private advisory services.
-
-The interface supports English and Arabic, including right-to-left (RTL) layouts, and combines cinematic media, responsive property browsing, interactive filtering, investment maps, and a consultation form.
+Rawasi is a bilingual real estate website for discovering premium homes, rental properties, Gulf investment opportunities, and private advisory services. The interface supports English and Arabic, including right-to-left (RTL) layouts, and is built to adapt to desktop and mobile screens.
 
 ## Features
 
-- Cinematic splash screen and video hero
-- English and Arabic language switching with RTL support
-- Bilingual company story and animated portfolio statistics
-- Interactive services presentation
-- Property listings for purchase and rental
-- Search and filtering by location, property type, budget, and bedroom count
-- Paginated property grid
-- Gulf investment opportunities with interactive 3D and map views
-- Strategic Gulf hub information
-- Private consultation request form
+- Cinematic splash screen and video-led hero section
+- English/Arabic language switching with RTL layout support
+- Company profile, animated statistics, and service highlights
+- Property listings for purchase and rent, with search and filters
+- Paginated property cards
+- Gulf investment opportunities with interactive map and 3D views
+- Featured locations and a private consultation form
 - Responsive navigation and back-to-top control
 
-## Tech Stack
+## Technology
 
 - React 19
 - Vite 8
 - Tailwind CSS 4
-- React Three Fiber and Drei
-- Three.js
+- Three.js with React Three Fiber and Drei
 - Lucide React
 - React Parallax Tilt
 - Oxlint
 
 ## Getting Started
 
-### Prerequisites
+### Requirements
 
-- Node.js 20 or newer
+- Node.js 20.19+ or 22.12+
 - npm
 
-### Installation
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-### Development
-
-Start the local development server:
+### Run the development server
 
 ```bash
 npm run dev
 ```
 
-Vite will print the local URL in the terminal, typically `http://localhost:5173`.
+Vite prints the local development URL in the terminal.
 
-### Production Build
-
-Create an optimized production build:
+### Build and preview
 
 ```bash
 npm run build
-```
-
-Preview the production build locally:
-
-```bash
 npm run preview
 ```
 
-### Linting
-
-Run the configured Oxlint checks:
+### Lint
 
 ```bash
 npm run lint
@@ -77,37 +60,68 @@ npm run lint
 ## Project Structure
 
 ```text
-src/
-├── App.jsx                  # Main page composition and language state
-├── main.jsx                 # React entry point
-├── index.css                # Global styles and animations
-├── assets/                  # Images, videos, and other media
-├── components/              # Reusable UI and layout components
-├── data/
-│   └── propertiesData1.js   # Property listing data
-└── sections/
-    ├── Hero.jsx
-    ├── About.jsx
-    ├── Services.jsx
-    ├── Featured Properties.jsx
-    ├── Investment.jsx
-    ├── Featured Locations.jsx
-    └── Contact&Consultation.jsx
+.
+├── .gitignore
+├── .oxlintrc.json
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+├── vite.config.js
+└── src/
+    ├── App.jsx
+    ├── main.jsx
+    ├── index.css
+    ├── assets/
+    │   ├── about1.jpg
+    │   ├── contact.png
+    │   ├── d.jpg
+    │   └── new.mp4
+    ├── components/
+    │   ├── 3D.jsx
+    │   ├── AboutStatsCards.jsx
+    │   ├── FeaturedPropertyCard.jsx
+    │   ├── Footer.jsx
+    │   ├── Heading.jsx
+    │   ├── InteractiveGulfMap.jsx
+    │   ├── Interior3DPanView.jsx
+    │   ├── Logo.jsx
+    │   ├── Navbar.jsx
+    │   ├── PropertyCard.jsx
+    │   ├── PropertyFilterBar.jsx
+    │   ├── PropertyGrid.jsx
+    │   ├── SliderCards.jsx
+    │   ├── SplashScreen.jsx
+    │   ├── TopButton.jsx
+    │   └── Button/
+    │       ├── Button.jsx
+    │       └── Button.css
+    ├── data/
+    │   ├── investmentOpportunitiesData.js
+    │   └── propertiesData1.js
+    └── sections/
+        ├── About.jsx
+        ├── Contact&Consultation.jsx
+        ├── Featured Locations.jsx
+        ├── Featured Properties.jsx
+        ├── Hero.jsx
+        ├── Investment.jsx
+        └── Services.jsx
 ```
 
-## Content and Customization
+### Main folders
 
-- Update property records in `src/data/propertiesData1.js`.
-- Edit English and Arabic copy in the individual section components.
-- Replace local media files in `src/assets/` and update the corresponding imports.
-- External Unsplash and Google Maps links are used in some investment and service content.
-- The consultation form currently performs client-side validation and displays a success state; connect `handleSubmit` in `src/sections/Contact&Consultation.jsx` to an API or form service for real submissions.
+- `src/components/` contains reusable interface elements and property, map, and 3D components.
+- `src/sections/` contains the page's main content sections.
+- `src/data/` contains the property listings and investment opportunity content.
+- `src/assets/` contains local images and video used by the interface.
 
-## Scripts
+
+## Available Scripts
 
 | Command | Description |
 | --- | --- |
 | `npm run dev` | Start the Vite development server |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview the production build |
+| `npm run build` | Create a production build |
+| `npm run preview` | Preview the production build locally |
 | `npm run lint` | Run Oxlint |
